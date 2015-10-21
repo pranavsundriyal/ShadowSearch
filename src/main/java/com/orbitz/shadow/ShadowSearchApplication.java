@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShadowSeaerchApplication {
+public class ShadowSearchApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ShadowSeaerchApplication.class, args);
+        SpringApplication.run(ShadowSearchApplication.class, args);
     }
 }

@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
         classpath('io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE')
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
     }
 }
 
@@ -15,7 +16,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot' 
-apply plugin: 'io.spring.dependency-management' 
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'docker' 
 
 jar {
     baseName = 'shadowSearch'
@@ -23,6 +25,8 @@ jar {
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+group = 'orbitz'
+mainClassName = 'com.orbitz.shadow.ShadowSearchApplication.java'
 
 repositories {
     mavenCentral()
@@ -44,4 +48,8 @@ eclipse {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.7'
+}
+
+distDocker {
+    exposePort 8080
 }

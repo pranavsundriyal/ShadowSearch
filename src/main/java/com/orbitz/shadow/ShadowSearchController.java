@@ -3,7 +3,6 @@ package com.orbitz.shadow;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.apache.commons.httpclient.HttpClient;
 
 @RestController
 public class ShadowSearchController {
@@ -15,7 +14,7 @@ public class ShadowSearchController {
 	
 	@RequestMapping("/voidSearch")
 	public void voidSearch(){
-		httpClient 
+		 
 	}
 
 }

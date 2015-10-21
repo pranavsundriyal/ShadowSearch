@@ -7,9 +7,9 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ShadowSeaerchApplication.class)
+@SpringApplicationConfiguration(classes = ShadowSearchApplication.class)
 @WebAppConfiguration
-public class ShadowSeaerchApplicationTests {
+public class ShadowSearchApplicationTests {
 
 	@Test
 	public void contextLoads() {
