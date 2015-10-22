@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ShadowSearchController {
 	
 	@RequestMapping("/search")
-	public String shadowSearch(@RequestParam String request){
+	public String shadowsearch(@RequestParam String request){
+		System.out.println("request="+request);
 		return "Shadowed " + request;
 	}
 	

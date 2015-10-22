@@ -20,13 +20,14 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'docker' 
 
 jar {
-    baseName = 'shadowSearch'
-    version = '0.0.1-SNAPSHOT'
+    baseName = 'shadowsearch'
+    version = '0.0.1'
 }
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 group = 'orbitz'
-mainClassName = 'com.orbitz.shadow.ShadowSearchApplication.java'
+mainClassName = 'com.orbitz.shadow.ShadowSearchApplication'
 
 repositories {
     mavenCentral()
@@ -34,7 +35,7 @@ repositories {
 
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
+	    compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 
@@ -48,6 +49,10 @@ eclipse {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.7'
+}
+
+docker {
+    maintainer = 'michael.carlson@orbitz.com'
 }
 
 distDocker {
