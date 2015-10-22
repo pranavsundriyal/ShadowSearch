@@ -1,0 +1,261 @@
+16:53:33.931 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=e859361e-83d9-4abb-8797-568d4d5c8d8c,javaHome=/usr/local/java/jdk1.8.0_51-x64,daemonRegistryDir=/home/psundriyal/air/shadowsearch/?/.gradle/daemon,pid=6946,idleTimeout=120000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+16:53:33.935 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1445464413935
+16:53:33.942 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding IP addresses for network interface virbr0
+16:53:33.943 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Is this a loopback interface? false
+16:53:33.943 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Is this a multicast interface? true
+16:53:33.943 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding remote address /192.168.122.1
+16:53:33.944 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding remote multicast interface virbr0
+16:53:33.944 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding IP addresses for network interface eth1
+16:53:33.945 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Is this a loopback interface? false
+16:53:33.945 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Is this a multicast interface? true
+16:53:33.945 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding remote address /fe80:0:0:0:a2e:5fff:fe05:5f82%eth1
+16:53:33.946 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding remote address /10.222.144.85
+16:53:33.946 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding remote multicast interface eth1
+16:53:33.946 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding IP addresses for network interface lo
+16:53:33.946 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Is this a loopback interface? true
+16:53:33.947 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Is this a multicast interface? false
+16:53:33.947 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding loopback address /0:0:0:0:0:0:0:1%lo
+16:53:33.947 [DEBUG] [org.gradle.messaging.remote.internal.inet.InetAddressFactory] Adding loopback address /127.0.0.1
+16:53:33.958 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Listening on [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]].
+16:53:33.960 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Wed Oct 21 16:53:33 CDT 2015, with address: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+16:53:33.961 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Advertising the daemon address to the clients: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+16:53:33.961 [DEBUG] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=e859361e-83d9-4abb-8797-568d4d5c8d8c,javaHome=/usr/local/java/jdk1.8.0_51-x64,daemonRegistryDir=/home/psundriyal/air/shadowsearch/?/.gradle/daemon,pid=6946,idleTimeout=120000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+16:53:33.961 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]], context: DefaultDaemonContext[uid=e859361e-83d9-4abb-8797-568d4d5c8d8c,javaHome=/usr/local/java/jdk1.8.0_51-x64,daemonRegistryDir=/home/psundriyal/air/shadowsearch/?/.gradle/daemon,pid=6946,idleTimeout=120000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+16:53:33.968 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+16:53:33.969 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+16:53:33.989 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+16:53:33.989 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
+16:53:33.991 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
+16:53:33.991 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] requestStopOnIdleTimeout(120000 MILLISECONDS) called on daemon
+16:53:33.992 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Idle timeout: waiting for daemon to stop or be idle for 120000ms
+16:53:33.992 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is idle, sleeping until state change or idle timeout at Wed Oct 21 16:55:33 CDT 2015
+16:53:34.040 [DEBUG] [org.gradle.messaging.remote.internal.inet.TcpIncomingConnector] Accepted connection from /0:0:0:0:0:0:0:1:46596 to /0:0:0:0:0:0:0:1:41624.
+16:53:34.084 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.BuildAndStop
+16:53:34.084 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}
+16:53:34.085 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}.
+16:53:34.085 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch} with connection: socket connection from /0:0:0:0:0:0:0:1:41624 to /0:0:0:0:0:0:0:1:46596.
+16:53:34.094 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@13896603] after 0.0 minutes of idle
+16:53:34.094 [INFO] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Marking the daemon as busy, address: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+16:53:34.094 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+16:53:34.095 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+16:53:34.095 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+16:53:34.098 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+16:53:34.098 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1445464414098
+16:53:34.099 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon is busy, sleeping until state changes.
+16:53:34.099 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}. Dispatching build started information...
+16:53:34.100 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 16: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+16:53:34.103 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/home/psundriyal/.gvm/vertx/current/bin:/home/psundriyal/.gvm/springboot/current/bin:/home/psundriyal/.gvm/lazybones/current/bin:/home/psundriyal/.gvm/jbake/current/bin:/home/psundriyal/.gvm/groovyserv/current/bin:/home/psundriyal/.gvm/groovy/current/bin:/home/psundriyal/.gvm/griffon/current/bin:/home/psundriyal/.gvm/grails/current/bin:/home/psundriyal/.gvm/gradle/current/bin:/home/psundriyal/.gvm/glide/current/bin:/home/psundriyal/.gvm/gaiden/current/bin:/home/psundriyal/.gvm/crash/current/bin:/home/psundriyal/.gvm/asciidoctorj/current/bin:/usr/lib64/qt-3.3/bin:/usr/NX/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/usr/local/java/jdk1.6/bin:/usr/local/java/jdk1.6/bin, IMSETTINGS_MODULE=none, XAUTHORITY=/var/run/gdm/auth-for-psundriyal-nQy5qY/database, HISTCONTROL=ignoredups, XMODIFIERS=@im=none, GDMSESSION=gnome, GRAILS_HOME=/home/psundriyal/.gvm/grails/current, VERTX_HOME=/home/psundriyal/.gvm/vertx/current, ASCIIDOCTORJ_HOME=/home/psundriyal/.gvm/asciidoctorj/current, DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-94oFeICyeA,guid=6bda96dfd7e77f6ea8e2585e00000083, MAIL=/var/spool/mail/psundriyal, COLORTERM=gnome-terminal, LD_LIBRARY_PATH=/usr/local/java/jdk1.6.0_25/jre/lib/i386/server:/usr/local/java/jdk1.6.0_25/jre/lib/i386:/usr/local/java/jdk1.6.0_25/jre/../lib/i386, NXDIR=/usr/NX, SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/11661,unix/unix:/tmp/.ICE-unix/11661, USERNAME=psundriyal, LOGNAME=psundriyal, PWD=/home/psundriyal/air/shadowsearch, ORBIT_SOCKETDIR=/tmp/orbit-psundriyal, SPRINGBOOT_HOME=/home/psundriyal/.gvm/springboot/current, WINDOWID=48234499, SHELL=/bin/bash, LESSOPEN=||/usr/bin/lesspipe.sh %s, GROOVYSERV_HOME=/home/psundriyal/.gvm/groovyserv/current, GDM_KEYBOARD_LAYOUT=us, QTINC=/usr/lib64/qt-3.3/include, OLDPWD=/home/psundriyal/air/shadowsearch, GVM_PLATFORM=Linux, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass, IMSETTINGS_INTEGRATE_DESKTOP=yes, CRASH_HOME=/home/psundriyal/.gvm/crash/current, XDG_SESSION_COOKIE=0fcd75fba6a38b20cf74826500000033-1440517493.195782-1037286718, GNOME_KEYRING_SOCKET=/tmp/keyring-Vn29zb/socket, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:, KDE_IS_PRELINKED=1, SHLVL=2, GVM_BROADCAST_SERVICE=http://cast.gvm.io, GRIFFON_HOME=/home/psundriyal/.gvm/griffon/current, QT_IM_MODULE=xim, HISTSIZE=1000, JAVA_HOME=/usr/local/java/jdk1.6, GVM_VERSION=2.4.1, TERM=xterm, LAZYBONES_HOME=/home/psundriyal/.gvm/lazybones/current, GAIDEN_HOME=/home/psundriyal/.gvm/gaiden/current, XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt, LANG=en_US.UTF-8, G_BROKEN_FILENAMES=1, GRADLE_HOME=/home/psundriyal/.gvm/gradle/current, GROOVY_HOME=/home/psundriyal/.gvm/groovy/current, DISPLAY=:0.0, GVM_SERVICE=http://api.gvmtool.net, GTK_RC_FILES=/etc/gtk/gtkrc:/home/psundriyal/.gtkrc-1.2-gnome2, JBAKE_HOME=/home/psundriyal/.gvm/jbake/current, GDM_LANG=en_US.UTF-8, GVM_DIR=/home/psundriyal/.gvm, CVS_RSH=ssh, DESKTOP_SESSION=gnome, USER=psundriyal, WINDOWPATH=1, GVM_BROKER_SERVICE=http://release.gvm.io, SSH_AUTH_SOCK=/tmp/keyring-Vn29zb/socket.ssh, HOSTNAME=psundriyal.duncllc.com, QTDIR=/usr/lib64/qt-3.3, NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat, KDEDIRS=/usr, GVM_INIT=true, GLIDE_HOME=/home/psundriyal/.gvm/glide/current, QTLIB=/usr/lib64/qt-3.3/lib, HOME=/home/psundriyal, GNOME_KEYRING_PID=11651}
+16:53:34.114 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+16:53:34.114 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 6946). The daemon log file: /home/psundriyal/air/shadowsearch/?/.gradle/daemon/2.7/daemon-6946.out.log
+16:53:34.116 [DEBUG] [org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon] Requesting daemon stop after processing BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}
+16:53:34.116 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Stop as soon as idle requested. The daemon is busy: true
+16:53:34.117 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Idle timeout: daemon stop has been requested. Sleeping until state changes.
+16:53:34.118 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+16:53:34.119 [INFO] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=e859361e-83d9-4abb-8797-568d4d5c8d8c,javaHome=/usr/local/java/jdk1.8.0_51-x64,daemonRegistryDir=/home/psundriyal/air/shadowsearch/?/.gradle/daemon,pid=6946,idleTimeout=120000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+:compileJava UP-TO-DATE
+:processResources
+:classes
+:findMainClass
+:bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.5.RELEASE)
+
+2015-10-21 16:53:37.577  INFO 6976 --- [           main] c.orbitz.shadow.ShadowSearchApplication  : Starting ShadowSearchApplication on psundriyal.duncllc.com with PID 6976 (/home/psundriyal/air/shadowsearch/build/classes/main started by psundriyal in /home/psundriyal/air/shadowsearch)
+2015-10-21 16:53:37.611  INFO 6976 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77f99a05: startup date [Wed Oct 21 16:53:37 CDT 2015]; root of context hierarchy
+2015-10-21 16:53:38.067  INFO 6976 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-10-21 16:53:38.671  INFO 6976 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9999 (http)
+2015-10-21 16:53:38.844  INFO 6976 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-10-21 16:53:38.846  INFO 6976 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-10-21 16:53:38.928  INFO 6976 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-10-21 16:53:38.929  INFO 6976 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1321 ms
+2015-10-21 16:53:39.455  INFO 6976 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-10-21 16:53:39.459  INFO 6976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'metricFilter' to: [/*]
+2015-10-21 16:53:39.459  INFO 6976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-10-21 16:53:39.459  INFO 6976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-10-21 16:53:39.460  INFO 6976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2015-10-21 16:53:39.460  INFO 6976 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2015-10-21 16:53:39.643  INFO 6976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77f99a05: startup date [Wed Oct 21 16:53:37 CDT 2015]; root of context hierarchy
+2015-10-21 16:53:39.688  INFO 6976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/search]}" onto public java.lang.String com.orbitz.shadow.ShadowSearchController.shadowSearch(java.lang.String)
+2015-10-21 16:53:39.688  INFO 6976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/voidSearch]}" onto public void com.orbitz.shadow.ShadowSearchController.voidSearch()
+2015-10-21 16:53:39.690  INFO 6976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-10-21 16:53:39.691  INFO 6976 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-10-21 16:53:39.709  INFO 6976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-10-21 16:53:39.710  INFO 6976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-10-21 16:53:39.739  INFO 6976 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-10-21 16:53:39.978  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.979  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.979  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2015-10-21 16:53:39.980  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2015-10-21 16:53:39.981  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.982  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.983  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2015-10-21 16:53:39.983  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.984  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.984  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.984  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.985  INFO 6976 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig],methods=[GET]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-10-21 16:53:39.993  INFO 6976 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-10-21 16:53:39.999  INFO 6976 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2015-10-21 16:53:40.098 ERROR 6976 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Failed to start end point associated with ProtocolHandler ["http-nio-9999"]
+
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:437)
+	at sun.nio.ch.Net.bind(Net.java:429)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:338)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:760)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:472)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:237)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:186)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:149)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:288)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:483)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:686)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:957)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:946)
+	at com.orbitz.shadow.ShadowSearchApplication.main(ShadowSearchApplication.java:10)
+
+2015-10-21 16:53:40.103 ERROR 6976 --- [           main] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-9999]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-9999]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:154)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:237)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:186)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:149)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:288)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:483)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:686)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:957)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:946)
+	at com.orbitz.shadow.ShadowSearchApplication.main(ShadowSearchApplication.java:10)
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 12 common frames omitted
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:437)
+	at sun.nio.ch.Net.bind(Net.java:429)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:338)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:760)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:472)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:986)
+	... 13 common frames omitted
+
+2015-10-21 16:53:40.112  INFO 6976 --- [           main] o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2015-10-21 16:53:40.120  INFO 6976 --- [           main] .b.l.ClasspathLoggingApplicationListener : Application failed to start with classpath: [file:/home/psundriyal/air/shadowsearch/src/main/resources/, file:/home/psundriyal/air/shadowsearch/build/classes/main/, file:/home/psundriyal/air/shadowsearch/build/resources/main/, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/1.2.5.RELEASE/afe2043ba5aa7d112a4ef0c907ebc6dbf8b93ce5/spring-boot-starter-web-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/1.2.5.RELEASE/40bf8cebd6ce727abc1f671f9d7445f7f400a27d/spring-boot-starter-actuator-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/1.2.5.RELEASE/416b6339599892cb33077c9fd901de7669c38cbe/spring-boot-starter-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/1.2.5.RELEASE/9ac1752cd1a81b227d5f37e547077518df15a624/spring-boot-starter-tomcat-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.4.6/3e63a25de4065697b185f523ed5e020c0db3ff0/jackson-databind-2.4.6.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-validator/5.1.3.Final/334d46a93cf095160ce06d8382594b904933c808/hibernate-validator-5.1.3.Final.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.1.7.RELEASE/9f8e34eef228f44bda771c9dc62e9f1efa82c92d/spring-core-4.1.7.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.1.7.RELEASE/2d9245006b788d7d6afeec85a43e4bfe2e46340a/spring-web-4.1.7.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.1.7.RELEASE/b6b9f604cb2223251cae67fff7ca2b1d9ff1c2d8/spring-webmvc-4.1.7.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/1.2.5.RELEASE/e4fb248898da60475d73a24b32797a591d6b763c/spring-boot-actuator-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/1.2.5.RELEASE/d12969adffe18f6f778451b1a8d1dab485ab4a03/spring-boot-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/1.2.5.RELEASE/8f1ee1f5e37723dd0e2cd3b05c6fc9268798b93d/spring-boot-autoconfigure-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/1.2.5.RELEASE/79df0d68a15dd5437010e46df1806482a7878e76/spring-boot-starter-logging-1.2.5.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.14/c2df91929ed06a25001939929bff5120e0ea3fd4/snakeyaml-1.14.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/8.0.23/79dc3aea4f447392ab0bdc1359c31a931cd307d6/tomcat-embed-core-8.0.23.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/8.0.23/5a1ca084156665968232112b6606c0b259213aab/tomcat-embed-el-8.0.23.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-logging-juli/8.0.23/2ec89b09cb0eb133a03d9f513474f99ff667b93b/tomcat-embed-logging-juli-8.0.23.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/8.0.23/839167a26dec5dcef85fb19e2e429878b7215293/tomcat-embed-websocket-8.0.23.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.4.0/d6a66c7a5f01cf500377bd669507a08cfeba882a/jackson-annotations-2.4.0.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.4.6/2a1f6edb86b8c6d29f37f6a807295d4e5c279707/jackson-core-2.4.6.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.1.3.GA/64499e907f19e5e1b3fdc02f81440c1832fe3545/jboss-logging-3.1.3.GA.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.0.0/434efef28c81162b17c540e634cffa3bd9b09b4c/classmate-1.0.0.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.1.7.RELEASE/127f005bac8ec1fbbbc5bb1595d78c6179394a46/spring-aop-4.1.7.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.1.7.RELEASE/e52148e9671e2918a2172c9cf56b77bede2042ce/spring-beans-4.1.7.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.1.7.RELEASE/8c6c02bcccfa23a74db59f7b7725e69e1af38f04/spring-context-4.1.7.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.1.7.RELEASE/9bc3b81d05961f042ea4a45e84d60cdc59ea51f5/spring-expression-4.1.7.RELEASE.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.12/adef7a9e1263298255fdb5cb107ff171d07c82f3/jcl-over-slf4j-1.7.12.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.12/8811e2e9ab9055e557598dc9aedc64fd43e0ab20/jul-to-slf4j-1.7.12.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.slf4j/log4j-over-slf4j/1.7.12/d2444c9c7c1923304c25f86c5ee83a79a8166205/log4j-over-slf4j-1.7.12.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.3/d90276fff414f06cb375f2057f6778cd63c6082f/logback-classic-1.1.3.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/8e20852d05222dc286bf1c71d78d0531e177c317/slf4j-api-1.7.12.jar, file:/home/psundriyal/air/shadowsearch/%3f/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.1.3/e3c02049f2dbbc764681b40094ecf0dcbc99b157/logback-core-1.1.3.jar]
+2015-10-21 16:53:40.121  INFO 6976 --- [           main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report enable debug logging (start with --debug)
+
+
+2015-10-21 16:53:40.122 ERROR 6976 --- [           main] o.s.boot.SpringApplication               : Application startup failed
+
+java.lang.IllegalStateException: Tomcat connector in failed state
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:157)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:288)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:483)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:686)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:957)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:946)
+	at com.orbitz.shadow.ShadowSearchApplication.main(ShadowSearchApplication.java:10)
+
+2015-10-21 16:53:40.122  INFO 6976 --- [           main] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@77f99a05: startup date [Wed Oct 21 16:53:37 CDT 2015]; root of context hierarchy
+2015-10-21 16:53:40.123  INFO 6976 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2015-10-21 16:53:40.125  INFO 6976 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+Exception in thread "main" java.lang.IllegalStateException: Tomcat connector in failed state
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:157)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:288)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:141)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:483)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:686)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:957)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:946)
+	at com.orbitz.shadow.ShadowSearchApplication.main(ShadowSearchApplication.java:10)
+:bootRun FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command '/usr/local/java/jdk1.8.0_51-x64/bin/java'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 7.519 secs
+16:53:40.198 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on cp_proj class cache for build file '/home/psundriyal/air/shadowsearch/build.gradle' (/home/psundriyal/air/shadowsearch/?/.gradle/caches/2.7/scripts/build_wx3s626mxp1fqlveb90e9ue0/cp_proj).
+16:53:40.199 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on proj class cache for build file '/home/psundriyal/air/shadowsearch/build.gradle' (/home/psundriyal/air/shadowsearch/?/.gradle/caches/2.7/scripts/build_wx3s626mxp1fqlveb90e9ue0/proj).
+16:53:40.200 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache module-metadata.bin (/home/psundriyal/air/shadowsearch/?/.gradle/caches/modules-2/metadata-2.15/module-metadata.bin)
+16:53:40.200 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache artifact-at-repository.bin (/home/psundriyal/air/shadowsearch/?/.gradle/caches/modules-2/metadata-2.15/artifact-at-repository.bin)
+16:53:40.201 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on artifact cache (/home/psundriyal/air/shadowsearch/?/.gradle/caches/modules-2).
+16:53:40.201 [DEBUG] [org.gradle.cache.internal.DefaultCacheAccess] Cache Plugin Resolution Cache (/home/psundriyal/air/shadowsearch/?/.gradle/caches/2.7/plugin-resolution) was closed 0 times.
+16:53:40.203 [DEBUG] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopping 0 compiler daemon(s).
+16:53:40.203 [INFO] [org.gradle.api.internal.tasks.compile.daemon.CompilerDaemonManager] Stopped 0 compiler daemon(s).
+16:53:40.204 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache outputFileStates.bin (/home/psundriyal/air/shadowsearch/.gradle/2.7/taskArtifacts/outputFileStates.bin)
+16:53:40.204 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileSnapshots.bin (/home/psundriyal/air/shadowsearch/.gradle/2.7/taskArtifacts/fileSnapshots.bin)
+16:53:40.204 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache taskArtifacts.bin (/home/psundriyal/air/shadowsearch/.gradle/2.7/taskArtifacts/taskArtifacts.bin)
+16:53:40.204 [DEBUG] [org.gradle.cache.internal.btree.BTreePersistentIndexedCache] Closing cache fileHashes.bin (/home/psundriyal/air/shadowsearch/.gradle/2.7/taskArtifacts/fileHashes.bin)
+16:53:40.204 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on task history cache (/home/psundriyal/air/shadowsearch/.gradle/2.7/taskArtifacts).
+16:53:40.205 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolved configuration cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+16:53:40.205 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.CachedStoreFactory] Resolution result cache closed. Cache reads: 0, disk reads: 0 (avg: 0.0 secs, total: 0.0 secs)
+16:53:40.205 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.resolveengine.store.ResolutionResultsStoreFactory] Deleted 2 resolution results binary files in 0.0 secs
+16:53:40.206 [DEBUG] [org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.InMemoryCachedRepositoryFactory] In-memory dependency metadata cache closed. Repos cached: 3, cache instances: 1, modules served from cache: 35, artifacts: 35
+16:53:40.206 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has finished executing the build.
+16:53:40.341 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Idle timeout: daemon stop has been requested. Sleeping until state changes.
+16:53:40.342 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: finished waiting for DaemonCommandExecution[command = BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@13896603]. Result org.gradle.launcher.daemon.server.DaemonStateCoordinator@4328dbe7 with state StopRequested
+16:53:40.342 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: completed DaemonCommandExecution[command = BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}, connection = org.gradle.launcher.daemon.server.DefaultDaemonConnection@13896603]
+16:53:40.342 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] updating lastActivityAt to 1445464420342
+16:53:40.342 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Marking daemon stopped due to command completed and stop requested. The daemon is running a build: false
+16:53:40.342 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Idle timeout: daemon has stopped.
+16:53:40.342 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stop() called on daemon
+16:53:40.342 [DEBUG] [org.gradle.launcher.daemon.server.exec.ReturnResult] Daemon is dispatching the build result: Failure[value=org.gradle.initialization.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Execution failed for task ':bootRun'.]
+16:53:40.342 [INFO] [org.gradle.launcher.daemon.server.Daemon] Stop requested. Daemon is removing its presence from the registry...
+16:53:40.343 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 13: dispatching class org.gradle.launcher.daemon.protocol.Failure
+16:53:40.343 [DEBUG] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Removing our presence to clients, eg. removing this address from the registry: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+16:53:40.343 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Removing daemon address: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+16:53:40.344 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+16:53:40.344 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+16:53:40.346 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+16:53:40.346 [DEBUG] [org.gradle.launcher.daemon.server.DomainRegistryUpdater] Address removed from registry.
+16:53:40.368 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Finishing executing command: BuildAndStop{id=cbfd2ac0-82e1-4f8a-8c5a-a164c77bb095.1, currentDir=/home/psundriyal/air/shadowsearch}
+16:53:40.425 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.CloseInput
+16:53:40.425 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@1498babc
+16:53:40.466 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.Finished
+16:53:40.466 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received non-IO message from client: org.gradle.launcher.daemon.protocol.Finished@110a7a5d
+16:53:40.466 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received finished message: org.gradle.launcher.daemon.protocol.Finished@110a7a5d
+16:53:40.467 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 13: stopping connection
+16:53:40.467 [DEBUG] [org.gradle.messaging.remote.internal.inet.SocketConnection] Discarding EOFException: java.io.EOFException
+16:53:40.468 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received null
+16:53:40.468 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] Received end-of-input from client.
+16:53:40.469 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 13: stopping connection
+Daemon vm is shutting down... The daemon has exited normally or was terminated in response to a user interrupt.
+16:53:40.471 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Removing daemon address: [efa8a911-b229-448b-9210-37c874327e3b port:41624, addresses:[/0:0:0:0:0:0:0:1%lo, /127.0.0.1]]
+16:53:40.471 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+16:53:40.472 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired.
+16:53:40.473 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
