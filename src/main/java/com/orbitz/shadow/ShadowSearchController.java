@@ -5,6 +5,7 @@ import com.orbitz.shadow.model.Request;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.orbitz.shadow.logging.KafkaLogger;
 
 @RestController
 public class ShadowSearchController {
@@ -24,6 +25,9 @@ public class ShadowSearchController {
         ExpediaSearchServiceImpl expediaSearchService = new ExpediaSearchServiceImpl();
 
         String response = expediaSearchService.getResponse(request);
+        //KafkaLogger logger = new KafkaLogger();
+        //logger.log(response);
+        
         return response;
 	}
 	
