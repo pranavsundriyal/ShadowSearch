@@ -37,6 +37,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.apache.httpcomponents:httpclient:4.3.6')
     compile('org.apache.kafka:kafka_2.11:0.8.2.2')
+    compile('com.amazonaws:aws-java-sdk:1.10.30')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

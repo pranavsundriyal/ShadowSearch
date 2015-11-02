@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.orbitz.shadow.logging.KafkaLogger;
+import com.orbitz.shadow.logging.amazonSQS;
 
 @RestController
 public class ShadowSearchController {
@@ -54,17 +55,21 @@ public class ShadowSearchController {
 	
 	@RequestMapping(value = "/voidSearch", method = RequestMethod.POST)
 	public String voidSearch(@RequestBody RequestWrapper reqWrap){
+		String response = "WAKA WAKA";
 		Request req = reqWrap.getRequest();
 		Modifiers mods = reqWrap.getModifiers();
 		
 		System.out.println(req.getOrigin() + ", " + req.getDestination() + ", " + req.getArrivalDate() + ", " + req.getDeparturteDate());
 		System.out.println(mods.getSearchHost() + ", " + mods.getTransform() + ", " + mods.getSomethingElse());
-		 
-		ExpediaSearchServiceImpl expediaSearchService = new ExpediaSearchServiceImpl();
-        String response = expediaSearchService.getResponse(req);
-		return response;
-         
-         
+		
+		amazonSQS sqs = new amazonSQS();
+		
+	    ExpediaSearchServiceImpl expediaSearchService = new ExpediaSearchServiceImpl();
+        response = expediaSearchService.getResponse(req);
+        
+        sqs.sendMessage(response);
+        
+		return response; 
 	}
 
 }
