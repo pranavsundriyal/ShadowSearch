@@ -1,5 +1,7 @@
 package com.orbitz.shadow.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Pranav Sundriyal
@@ -14,7 +16,10 @@ public class Request {
     String destination;
 
 
-    public Request(String arrivalDate, String departurteDate, String origin, String destination) {
+    public Request(@JsonProperty("arrivalDate") String arrivalDate,
+    		@JsonProperty("departurteDate") String departurteDate,
+    		@JsonProperty("origin") String origin,
+    		@JsonProperty("destination") String destination) {
         this.arrivalDate = arrivalDate;
         this.departurteDate = departurteDate;
         this.origin = origin;
