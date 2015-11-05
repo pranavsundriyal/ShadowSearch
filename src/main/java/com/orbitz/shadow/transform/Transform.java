@@ -29,7 +29,7 @@ public class Transform {
 
 
     public static BiFunction<Request,String,Request> changeDepartureDate = (request, date) -> {
-        request.setDestination(date);
+        request.setDeparturteDate(date);
         return request;
     };
 

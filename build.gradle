@@ -18,7 +18,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'docker'
 
 jar {
-    baseName = 'shadowsearch'
+    baseName = 'dark-knight'
     version = '0.0.1'
 }
 
@@ -57,4 +57,16 @@ task wrapper(type: Wrapper) {
 
 distDocker {
     exposePort 9191
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = true
+    applicationName = jar.baseName
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+    }
 }
