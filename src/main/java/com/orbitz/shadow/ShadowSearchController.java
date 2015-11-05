@@ -5,6 +5,7 @@ import com.orbitz.shadow.model.Modifiers;
 import com.orbitz.shadow.model.Request;
 import com.orbitz.shadow.model.RequestWrapper;
 
+import com.orbitz.shadow.transform.Transform;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,14 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.orbitz.shadow.logging.KafkaLogger;
 import com.orbitz.shadow.logging.amazonSQS;
 
+import java.util.function.Function;
+import java.util.logging.Logger;
+
 @RestController
 public class ShadowSearchController {
-	
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
+
+    private Logger log = Logger.getLogger(ShadowSearchController.class.getName());
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String shadowSearch(@RequestParam(value="origin", required=true) String origin,
                                @RequestParam(value="dest", required=true) String destination,
                                @RequestParam(value="departure", required=true) String departureDate,
-                               @RequestParam(value="arrival", required=false) String arrivalDate){
+                               @RequestParam(value="arrival", required=false) String arrivalDate,
+                               @RequestParam(value="function", required=false) String function,
+                               @RequestParam(value="param", required=false) String param){
 
         Request request = null;
         if (arrivalDate == null) {
@@ -28,13 +36,19 @@ public class ShadowSearchController {
         } else {
              request = new Request(arrivalDate,departureDate, origin, destination);
         }
-        ExpediaSearchServiceImpl expediaSearchService = new ExpediaSearchServiceImpl();
 
-        String response = expediaSearchService.getResponse(request);
-        	KafkaLogger logger = new KafkaLogger();
-        logger.log(response);
-        
-        return response;
+
+
+        Transform.BiFunction f = Transform.getFuncMap().get(function);
+        if (f!=null) {
+            Request trequest = (Request) f.apply(request, param);
+            Transform.fire.apply(trequest);
+        }
+
+        if (function.equalsIgnoreCase("multiply") && Transform.isNumeric(param))
+            Transform.multiplyRequest.apply(request, Integer.parseInt(param));
+
+        return "success";
 	}
 	
 	/* sample json requests
@@ -61,15 +75,16 @@ public class ShadowSearchController {
 		
 		System.out.println(req.getOrigin() + ", " + req.getDestination() + ", " + req.getArrivalDate() + ", " + req.getDeparturteDate());
 		System.out.println(mods.getSearchHost() + ", " + mods.getTransform() + ", " + mods.getSomethingElse());
-		
+
 		amazonSQS sqs = new amazonSQS();
 		
-	    ExpediaSearchServiceImpl expediaSearchService = new ExpediaSearchServiceImpl();
-        response = expediaSearchService.getResponse(req);
+	    ExpediaSearchServiceImpl expediaSearchService = new ExpediaSearchServiceImpl(req);
+        response = expediaSearchService.execute(req);
         
         sqs.sendMessage(response);
         
 		return response; 
 	}
+
 
 }

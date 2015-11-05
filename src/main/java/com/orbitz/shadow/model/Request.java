@@ -14,6 +14,7 @@ public class Request {
     String departurteDate;
     String origin;
     String destination;
+    int maxOffer = 2000;
 
 
     public Request(@JsonProperty("arrivalDate") String arrivalDate,
@@ -62,5 +63,13 @@ public class Request {
 
     public void setDestination(String destination) {
         this.destination = destination;
+    }
+
+    public int getMaxOffer() {
+        return maxOffer;
+    }
+
+    public void setMaxOffer(int maxOffer) {
+        this.maxOffer = maxOffer;
     }
 }

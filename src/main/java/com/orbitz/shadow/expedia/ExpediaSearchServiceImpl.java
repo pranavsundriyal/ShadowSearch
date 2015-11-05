@@ -1,5 +1,6 @@
 package com.orbitz.shadow.expedia;
 
+import com.orbitz.shadow.SearchService;
 import com.orbitz.shadow.model.Request;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -12,19 +13,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ExpediaSearchServiceImpl {
+public class ExpediaSearchServiceImpl implements Runnable, SearchService{
+
 
     private static String API = "https://www.expedia.com/api/flight/search";
-    private final int MAX_RESULTS = 2000;
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+    private Request request;
+    private String repsonse;
 
-    private static final Logger LOG = LoggerFactory.getLogger(ExpediaSearchServiceImpl.class);
-
-    public ExpediaSearchServiceImpl() {
+    public ExpediaSearchServiceImpl(Request request) {
+        this.request = request;
     }
 
-    public String getResponse(Request request) {
+    @Override
+    public String execute(Request request) {
         String url = API + getParams(request);
-        StringBuffer response = new StringBuffer();
+        StringBuffer responseBuffer = new StringBuffer();
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
         HttpGet getRequest = new HttpGet(url);
@@ -34,22 +38,24 @@ public class ExpediaSearchServiceImpl {
         getRequest.addHeader("User-Agent", "Mozilla/5.0");
 
         try {
+            log.info("url is "+url);
             CloseableHttpResponse httpResponse = httpClient.execute(getRequest);
             BufferedReader rd = new BufferedReader(
                     new InputStreamReader(httpResponse.getEntity().getContent()));
 
             String line;
             while ((line = rd.readLine()) != null) {
-                response.append(line);
+                responseBuffer.append(line);
             }
         } catch (IOException e) {
-            LOG.error("failed reading the IO stream");
+            log.error("failed reading the IO stream");
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return response.toString();
+        log.info("Size of the response returned in bytes: "+Integer.toString(responseBuffer.toString().length()));
+        return responseBuffer.toString();
     }
 
     public String getParams(Request request) {
@@ -65,9 +71,14 @@ public class ExpediaSearchServiceImpl {
             params.append("&returnDate=").append(request.getDeparturteDate());
         }
 
-        params.append("&maxOfferCount=" + MAX_RESULTS);
+        params.append("&maxOfferCount=" + request.getMaxOffer());
         params.append("&eapid=128087");
         return params.toString();
+    }
+
+    @Override
+    public void run() {
+        this.setRepsonse(execute(this.request));
     }
 
     /*
@@ -154,4 +165,17 @@ public class ExpediaSearchServiceImpl {
         return hostConfig;
     }
     */
+
+    public Request getRequest() {
+        return request;
+    }
+
+    @Override
+    public String getRepsonse() {
+        return repsonse;
+    }
+
+    public void setRepsonse(String repsonse) {
+        this.repsonse = repsonse;
+    }
 }
