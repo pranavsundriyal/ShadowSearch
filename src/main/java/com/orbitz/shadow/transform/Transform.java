@@ -12,56 +12,145 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Function;
+import java.util.logging.Logger;
 
 public class Transform {
 
-    public static ExecutorService executorService = Executors.newFixedThreadPool(10);
+    private static ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+    private static Logger log = Logger.getLogger(Transform.class.getName());
 
     @FunctionalInterface
     public interface BiFunction<T, U, R> {
-        R   apply(T t, U u);
+        R apply(T t, U u);
     }
 
-    public static BiFunction<Request,String,Request> changeDestination = (request, dest) -> {
+    public static BiFunction<Request,String,List<Request>> changeDestination = (request, dest) -> {
+        List<Request>requestList = new ArrayList<>();
         request.setDestination(dest);
-        return request;
+        requestList.add(request);
+        return requestList;
     };
 
 
-    public static BiFunction<Request,String,Request> changeDepartureDate = (request, date) -> {
+    public static BiFunction<Request,String,List<Request>> changeDepartureDate = (request, date) -> {
+        List<Request>requestList = new ArrayList<>();
         request.setDeparturteDate(date);
-        return request;
+        requestList.add(request);
+        return requestList;
     };
 
-    public static BiFunction<Request,String,Request> changeDepartureAheadDays = (request, days) -> {
+    public static BiFunction<Request,String,List<Request>> changeDepartureAheadDays = (request, days) -> {
+        List<Request>requestList = new ArrayList<>();
         if (isDateCorrect(request.getDeparturteDate()) && isNumeric(days)) {
             LocalDate date = convertToLocalDate(request.getDeparturteDate());
             LocalDate newDate = date.plusDays(Long.parseLong(days));
             request.setDeparturteDate(convertLocalDatetoString(newDate));
         }
-        return request;
+        requestList.add(request);
+        return requestList;
     };
 
-    public static BiFunction<Request,String,Request> changeDepartureBehindDays = (request, days) -> {
+    public static BiFunction<Request,String,List<Request>> allDepartureDaysAhead = (request, days) -> {
+        List<Request>requestList = new ArrayList<>();
+        if (isDateCorrect(request.getDeparturteDate()) && isNumeric(days)) {
+            int n = Integer.parseInt(days);
+            LocalDate date = convertToLocalDate(request.getDeparturteDate());
+            for (int i=1; i<=n ; i++) {
+                Request newRequest = new Request(request);
+                LocalDate newDate = date.plusDays(i);
+                newRequest.setDeparturteDate(convertLocalDatetoString(newDate));
+                requestList.add(newRequest);
+            }
+
+        }
+        return requestList;
+    };
+
+    public static BiFunction<Request,String,List<Request>> allDepartureDaysBehind = (request, days) -> {
+        List<Request>requestList = new ArrayList<>();
+        if (isDateCorrect(request.getDeparturteDate()) && isNumeric(days)) {
+            int n = Integer.parseInt(days);
+            LocalDate date = convertToLocalDate(request.getDeparturteDate());
+            for (int i=1; i<=n ; i++) {
+                Request newRequest = new Request(request);
+                LocalDate newDate = date.minusDays(i);
+                newRequest.setDeparturteDate(convertLocalDatetoString(newDate));
+                requestList.add(newRequest);
+            }
+
+        }
+        return requestList;
+    };
+
+
+    public static BiFunction<Request,String,List<Request>> flexSearch = (request, days) -> {
+        List<Request>requestList = new ArrayList<>();
+        if (isDateCorrect(request.getDeparturteDate()) && isNumeric(days) && isDateCorrect(request.getArrivalDate())) {
+            int n = Integer.parseInt(days);
+            LocalDate departDay = convertToLocalDate(request.getDeparturteDate());
+            LocalDate arrivalDay = convertToLocalDate(request.getArrivalDate());
+            for (int i = 0; i <= n ; i++) {
+                for (int j= 0; j <= n; j++) {
+                    Request negativeRequest = new Request(request);
+                    LocalDate departureDate = departDay.minusDays(i);
+                    LocalDate arrivalDate = arrivalDay.minusDays(j);
+                    negativeRequest.setDeparturteDate(convertLocalDatetoString(departureDate));
+                    negativeRequest.setArrivalDate(convertLocalDatetoString(arrivalDate));
+                    requestList.add(negativeRequest);
+
+                    Request plusRequest = new Request(request);
+                    departureDate = departDay.plusDays(i);
+                    arrivalDate = arrivalDay.plusDays(j);
+                    plusRequest.setDeparturteDate(convertLocalDatetoString(departureDate));
+                    plusRequest.setArrivalDate(convertLocalDatetoString(arrivalDate));
+
+                    requestList.add(plusRequest);
+                }
+            }
+        }
+        return requestList;
+    };
+    public static BiFunction<Request,String,List<Request>> changeDepartureBehindDays = (request, days) -> {
+
+        List<Request>requestList = new ArrayList<>();
 
         if (isDateCorrect(request.getDeparturteDate()) && isNumeric(days)) {
             LocalDate date = convertToLocalDate(request.getDeparturteDate());
             LocalDate newDate = date.minusDays(Long.parseLong(days));
             request.setDeparturteDate(convertLocalDatetoString(newDate));
         }
-        return request;
+        requestList.add(request);
+        return requestList;
     };
 
 
-    public static BiFunction<Request,String,Request> changeOrigin = (request, origin) -> {
+    public static BiFunction<Request,String,List<Request>> changeOrigin = (request, origin) -> {
+        List<Request>requestList = new ArrayList<>();
         request.setOrigin(origin);
-        return request;
+        requestList.add(request);
+        return requestList;
     };
 
-    public static BiFunction<Request,String,Request> changeMaxOffer = (request, count) -> {
+    public static BiFunction<Request,String,List<Request>> changeMaxOffer = (request, count) -> {
+        List<Request>requestList = new ArrayList<>();
         if (isNumeric(count))
             request.setMaxOffer(Integer.parseInt(count));
-        return request;
+        requestList.add(request);
+        return requestList;
+    };
+
+    public static BiFunction<Request,String,List<Request>> multiplyRequest = (request, n)-> {
+
+        List<Request>requestList = new ArrayList<>();
+
+        if (isNumeric(n)){
+            int size = Integer.parseInt(n);
+            for (int i=0; i <size;i++) {
+                requestList.add(request);
+            }
+        }
+        return requestList;
     };
 
     private static final Map<String, BiFunction> funcMap;
@@ -73,6 +162,10 @@ public class Transform {
         map.put("changeMaxOffer", changeMaxOffer);
         map.put("changeDepartureAheadDays", changeDepartureAheadDays);
         map.put("changeDepartureBehindDays",changeDepartureBehindDays);
+        map.put("allDepartureDaysAhead", allDepartureDaysAhead);
+        map.put("allDepartureDaysBehind", allDepartureDaysBehind);
+        map.put("flexSearch", flexSearch);
+        map.put("multiply", multiplyRequest);
         funcMap = map;
     }
 
@@ -85,38 +178,41 @@ public class Transform {
 
 
     public  static Request transformReq(Request request, String function, String param) {
-        if (funcMap.get(function)!=null) {
-            BiFunction<Request, String, Request> biFunction = funcMap.get(function);
-            if (biFunction != null) {
-                request = biFunction.apply(request, param);
-                System.out.println("apply function " + function + " " + biFunction.getClass().getSimpleName() + " with params " + param);
-                fire.apply(request);
 
+        if (funcMap.get(function)!=null) {
+            try{
+                BiFunction<Request, String, Request> biFunction = funcMap.get(function);
+                 if (biFunction != null) {
+                    List<Request> requestList  = (List<Request>) biFunction.apply(request, param);
+                    System.out.println("apply function " + function + " " + biFunction.getClass().getSimpleName() + " with params " + param);
+                    requestList.parallelStream().forEach(r -> fire.apply(r));
+                }
+
+            }catch (ClassCastException c){
+                log.info("Class Cast exception");
             }
         }
         return request;
     }
 
 
-    public static BiFunction<Request,Integer,List<Request>> multiplyRequest = (r, n)-> {
-        List<Request> requestList = new ArrayList<>();
-        for (int i=0; i<n;i++) {
-            fire.apply(r);
-        }
-        return  requestList;
-    };
+
+
 
     public static boolean isNumeric(String s) {
         return s.matches("[-+]?\\d*\\.?\\d+");
     }
 
     public static boolean isDateCorrect(String s) {
-        String [] d = s.split("-");
-        for (int i =0 ; i<d.length;i++){
-            if (!isNumeric(d[0]))
-                return false;
+        if (s != null) {
+            String[] d = s.split("-");
+            for (int i = 0; i < d.length; i++) {
+                if (!isNumeric(d[0]))
+                    return false;
+            }
+            return true;
         }
-        return true;
+        return false;
     }
 
     public static LocalDate convertToLocalDate(String s){
@@ -127,11 +223,6 @@ public class Transform {
 
     public static String convertLocalDatetoString(LocalDate d){
         return d.getYear()+"-"+d.getMonthValue()+"-"+d.getDayOfMonth();
-    }
-
-
-    public static Map<String, BiFunction> getFuncMap() {
-        return funcMap;
     }
 }
 

@@ -33,6 +33,16 @@ public class Request {
         this.destination = destination;
     }
 
+    public Request(Request request) {
+        this.departurteDate = request.getDeparturteDate();
+        this.origin = request.getOrigin();
+        this.destination = request.getDestination();
+        this.maxOffer = request.getMaxOffer();
+        if (request.getArrivalDate() != null)
+            this.setArrivalDate(request.getArrivalDate());
+
+    }
+
     public String getArrivalDate() {
         return arrivalDate;
     }

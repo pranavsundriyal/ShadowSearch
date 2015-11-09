@@ -54,7 +54,7 @@ public class ExpediaSearchServiceImpl implements Runnable, SearchService{
             e.printStackTrace();
         }
 
-        log.info("Size of the response returned in bytes: "+Integer.toString(responseBuffer.toString().length()));
+        log.info("Size of the response returned for url "+url+"\nin bytes: "+Integer.toString(responseBuffer.toString().length()));
         return responseBuffer.toString();
     }
 
@@ -67,8 +67,8 @@ public class ExpediaSearchServiceImpl implements Runnable, SearchService{
                 .append(request.getOrigin()).append("&arrivalAirport=")
                 .append(request.getDestination());
 
-        if (null != request.getDeparturteDate()) {
-            params.append("&returnDate=").append(request.getDeparturteDate());
+        if (null != request.getArrivalDate()) {
+            params.append("&returnDate=").append(request.getArrivalDate());
         }
 
         params.append("&maxOfferCount=" + request.getMaxOffer());

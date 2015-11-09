@@ -30,23 +30,14 @@ public class ShadowSearchController {
                                @RequestParam(value="function", required=false) String function,
                                @RequestParam(value="param", required=false) String param){
 
-        Request request = null;
+        Request request;
         if (arrivalDate == null) {
              request = new Request(departureDate, origin, destination);
         } else {
              request = new Request(arrivalDate,departureDate, origin, destination);
         }
 
-
-
-        Transform.BiFunction f = Transform.getFuncMap().get(function);
-        if (f!=null) {
-            Request trequest = (Request) f.apply(request, param);
-            Transform.fire.apply(trequest);
-        }
-
-        if (function.equalsIgnoreCase("multiply") && Transform.isNumeric(param))
-            Transform.multiplyRequest.apply(request, Integer.parseInt(param));
+        Transform.transformReq(request,function,param);
 
         return "success";
 	}
