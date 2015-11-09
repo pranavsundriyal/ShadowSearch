@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.orbitz.shadow.logging.KafkaLogger;
 import com.orbitz.shadow.logging.amazonSQS;
 
+import java.util.List;
 import java.util.function.Function;
 import java.util.logging.Logger;
 
@@ -37,9 +38,9 @@ public class ShadowSearchController {
              request = new Request(arrivalDate,departureDate, origin, destination);
         }
 
-        Transform.transformReq(request,function,param);
+        List<Request> requestList = Transform.transformReq(request, function, param);
 
-        return "success";
+        return "Successfully fired function: "+function+" with params: "+param+" of size: "+requestList.size();
 	}
 	
 	/* sample json requests

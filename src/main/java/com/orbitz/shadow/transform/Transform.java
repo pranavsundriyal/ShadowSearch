@@ -177,13 +177,14 @@ public class Transform {
     };
 
 
-    public  static Request transformReq(Request request, String function, String param) {
+    public  static List<Request> transformReq(Request request, String function, String param) {
 
+        List<Request> requestList = null;
         if (funcMap.get(function)!=null) {
             try{
                 BiFunction<Request, String, Request> biFunction = funcMap.get(function);
                  if (biFunction != null) {
-                    List<Request> requestList  = (List<Request>) biFunction.apply(request, param);
+                    requestList  = (List<Request>) biFunction.apply(request, param);
                     System.out.println("apply function " + function + " " + biFunction.getClass().getSimpleName() + " with params " + param);
                     requestList.parallelStream().forEach(r -> fire.apply(r));
                 }
@@ -192,7 +193,7 @@ public class Transform {
                 log.info("Class Cast exception");
             }
         }
-        return request;
+        return requestList;
     }
 
 
