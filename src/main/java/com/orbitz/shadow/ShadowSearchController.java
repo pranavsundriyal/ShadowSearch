@@ -32,15 +32,24 @@ public class ShadowSearchController {
                                @RequestParam(value="param", required=false) String param){
 
         Request request;
+        int noOfRequest=1;
         if (arrivalDate == null) {
              request = new Request(departureDate, origin, destination);
         } else {
              request = new Request(arrivalDate,departureDate, origin, destination);
         }
 
-        List<Request> requestList = Transform.transformReq(request, function, param);
-
-        return "Successfully fired function: "+function+" with params: "+param+" of size: "+requestList.size();
+        if(function !=null) {
+            List<Request> requestList = Transform.transformReq(request, function, param);
+            if (requestList != null)
+                noOfRequest = requestList.size();
+        }
+        else {
+            Transform.fire.apply(request);
+            function ="noFunction";
+            param = "noParam";
+        }
+        return "Successfully fired function: "+function+" with params: "+param+" of size: "+noOfRequest;
 	}
 	
 	/* sample json requests

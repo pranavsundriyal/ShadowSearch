@@ -35,7 +35,9 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework:spring-context')
     compile('org.springframework.boot:spring-boot-starter-actuator')
+
     compile('org.apache.httpcomponents:httpclient:4.3.6')
     compile('org.apache.kafka:kafka_2.11:0.8.2.2')
     compile('com.amazonaws:aws-java-sdk:1.10.30')
@@ -70,4 +72,10 @@ task buildDocker(type: Docker, dependsOn: build) {
             into stageDir
         }
     }
+}
+
+task copyJar(type: Copy) {
+   from 'build/libs'
+   into 'src/main/docker'
+
 }

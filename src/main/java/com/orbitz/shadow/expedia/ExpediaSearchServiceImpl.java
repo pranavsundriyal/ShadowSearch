@@ -8,11 +8,14 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+@Component
 public class ExpediaSearchServiceImpl implements Runnable, SearchService{
 
 
@@ -25,7 +28,14 @@ public class ExpediaSearchServiceImpl implements Runnable, SearchService{
         this.request = request;
     }
 
+    /*
+    * Need this constructor for caching*/
+    public ExpediaSearchServiceImpl() {
+    }
+
+
     @Override
+    @Cacheable(value = "results", cacheManager = "springCM")
     public String execute(Request request) {
         String url = API + getParams(request);
         StringBuffer responseBuffer = new StringBuffer();
@@ -78,7 +88,9 @@ public class ExpediaSearchServiceImpl implements Runnable, SearchService{
 
     @Override
     public void run() {
+        Long curTime = System.currentTimeMillis();
         this.setRepsonse(execute(this.request));
+        log.info("time taken for the thread to execute in milliseconds: " + (System.currentTimeMillis()-curTime));
     }
 
     /*
